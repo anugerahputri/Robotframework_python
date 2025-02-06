@@ -8,6 +8,6 @@ def sort_numbers(arr):
     #gabungkan
     return even_numbers + odd_numbers
     
-input_array = [3, 2, 5, 1, 8, 9, 6]
-output = sort_numbers(input_array)
+input = [3, 2, 5, 1, 8, 9, 6]
+output = sort_numbers(input)
 print(output)
