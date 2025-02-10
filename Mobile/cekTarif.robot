@@ -65,6 +65,7 @@ And User klik tombol "Cek Tarif"
 
 Then Menampilkan list harga pengiriman
     Element Should Be Visible    xpath=//android.widget.TextView[@text="Jenis Pengiriman"]
+    Press Keycode    4
 
 
 ##[TC02-N]
@@ -74,6 +75,7 @@ And User tidak memilih alamat tujuan
 
 Then User melihat tombol "Cek Tarif" Disable
     Element Should Be Disabled  xpath=//android.widget.Button[@resource-id="com.lionparcel.services.consumer:id/btnCheckTariff"]
+    Press Keycode    4
 
 
 
