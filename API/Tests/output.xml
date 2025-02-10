@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-02-06T04:24:19.889408" rpa="false" schemaversion="5">
+<suite id="s1" name="postCreateUser" source="C:\Users\telkom\PycharmProjects\AnugerahTest\API\Tests\postCreateUser.robot">
+<test id="s1-t1" name="Scenario: Create a new user" line="10">
+<kw name="Given the API endpoint is &quot;${BASE_URL}/api/users&quot;" source_name="Given the API endpoint is &quot;${endpoint}&quot;">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.366759" level="INFO">${ENDPOINT} = https://reqres.in/api/users</msg>
+<arg>${ENDPOINT}</arg>
+<arg>${endpoint}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.365753" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2025-02-06T04:24:20.365753" elapsed="0.001006"/>
+</kw>
+<kw name="And the request payload is">
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2025-02-06T04:24:20.366759" level="INFO">${payload_fixed} = {'name': 'Anugerah', 'job': 'QA'}</msg>
+<var>${payload_fixed}</var>
+<arg>${payload}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2025-02-06T04:24:20.366759" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.366759" level="INFO">${PAYLOAD} = {'name': 'Anugerah', 'job': 'QA'}</msg>
+<arg>${PAYLOAD}</arg>
+<arg>${payload_fixed}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.366759" elapsed="0.000000"/>
+</kw>
+<arg>{"name": "Anugerah", "job": "QA"}</arg>
+<status status="PASS" start="2025-02-06T04:24:20.366759" elapsed="0.000000"/>
+</kw>
+<kw name="When I send a POST request to the endpoint">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2025-02-06T04:24:20.856175" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '33', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Anugerah", "job": "QA"}' 
+ </msg>
+<msg time="2025-02-06T04:24:20.856175" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 05 Feb 2025 21:24:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '80', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1738790661&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=a0r9WAqcnnVriipJePl1qUxwBUT0ksYaFqPBavLzCmg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1738790661&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=a0r9WAqcnnVriipJePl1qUxwBUT0ksYaFqPBavLzCmg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"50-K6LUDM0cc5y7R4H6hcTWHrKpdog"', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '90d5f77e1cf36597-SIN', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=17862&amp;min_rtt=16897&amp;rtt_var=8267&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2834&amp;recv_bytes=876&amp;delivery_rate=170586&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=5efc66e32c7ddcf9&amp;ts=421&amp;x=0"'} 
+ body={"name":"Anugerah","job":"QA","id":"659","createdAt":"2025-02-05T21:24:21.104Z"} 
+ </msg>
+<msg time="2025-02-06T04:24:20.857170" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${ENDPOINT}</arg>
+<arg>json=${PAYLOAD}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.367746" elapsed="0.489424"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.858166" level="INFO">{'name': 'Anugerah', 'job': 'QA', 'id': '659', 'createdAt': '2025-02-05T21:24:21.104Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.857170" elapsed="0.000996"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.859164" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<arg>${RESPONSE}</arg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.858166" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-02-06T04:24:20.367746" elapsed="0.491418"/>
+</kw>
+<kw name="Then the response status code should be 201">
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${RESPONSE}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.860085" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2025-02-06T04:24:20.860085" elapsed="0.000996"/>
+</kw>
+<kw name="And the response should contain the created user details">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.862595" level="INFO">${json} = {'name': 'Anugerah', 'job': 'QA', 'id': '659', 'createdAt': '2025-02-05T21:24:21.104Z'}</msg>
+<var>${json}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.861592" elapsed="0.001003"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-06T04:24:20.863591" level="INFO">{'name': 'Anugerah', 'job': 'QA', 'id': '659', 'createdAt': '2025-02-05T21:24:21.104Z'}</msg>
+<arg>${json}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.863591" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${json}</arg>
+<arg>name</arg>
+<arg>Anugerah</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.863591" elapsed="0.000997"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${json}</arg>
+<arg>job</arg>
+<arg>QA</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.864588" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.864588" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>createdAt</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-02-06T04:24:20.865584" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-06T04:24:20.861592" elapsed="0.003992"/>
+</kw>
+<doc>Membuat pengguna baru dan memverifikasi response</doc>
+<status status="PASS" start="2025-02-06T04:24:20.364756" elapsed="0.501347"/>
+</test>
+<status status="PASS" start="2025-02-06T04:24:19.890405" elapsed="0.976161"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="postCreateUser" id="s1" pass="1" fail="0" skip="0">postCreateUser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

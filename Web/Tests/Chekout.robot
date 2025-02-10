@@ -6,65 +6,69 @@ ${BROWSER}    Chrome
 ${URL}        https://www.saucedemo.com/
 ${USERNAME}    standard_user
 ${PASSWORD}    secret_sauce
+${first_name}  Anugerah
+${last_name}  Putri
+${zip}  234556
 
 *** Test Cases ***
-Given user open in browser "https://www.saucedemo.com/"
-And user sucess login
-And user add to cart product sauce labs backpack
-And user click icon cart
-When user click chekout button
-Then user see form chekout information page
-And user input chekout information,"Anugerah","putri","234556"
-When user click continue button
-Then user see chekout overview page
-And user click finish button
-Then user sucess chekout product
+Scenario: User successfully checkout product
+    Given user opens browser to "${URL}"
+    And user successfully login
+    And user add to cart product sauce labs backpack
+    And user click icon cart
+    When user click checkout button
+    Then user see checkout information page
+    And user inputs checkout information "${first_name}" "${last_name}" "${zip}"
+    When user click continue button
+    Then user see checkout overview page
+    And user click finish button
+    Then user successfully checkout product
 
 
 *** Keywords ***
-Given user opens browser to "${url}"
-    Open Browser    ${url}    ${BROWSER}
+Given user opens browser to "${URL}"
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Wait Until Element Is Visible    data-test="username"
+    Wait Until Element Is Visible    css=[data-test="username"]
 
-And user successfully logs in
-    Input Text    data-test="username"   ${USERNAME}
-    Input Text    data-test="password"    ${PASSWORD}
-    Click Button    data-test="login-button"
-    Wait Until Location Is   ${url}inventory.html  timeout=10s
+And user successfully login
+    Input Text    css=[data-test="username"]   ${USERNAME}
+    Input Text    css=[data-test="password"]   ${PASSWORD}
+    Click Button    css=[data-test="login-button"]
+    Wait Until Location Is   ${URL}inventory.html  timeout=10s
 
 And user add to cart product sauce labs backpack
-    Click Button    data-test="add-to-cart-sauce-labs-backpack"
+    Click Button    css=[data-test="add-to-cart-sauce-labs-backpack"]
 
-And user clicks the cart icon
-    Click Element    data-test="shopping-cart-badge"
-    Wait Until Location Is        ${url}cart.html timeout=10s
+And user click icon cart
+    Click Element    css=[data-test="shopping-cart-badge"]
+    Wait Until Location Is        ${URL}cart.html  timeout=10s
 
-When user clicks the checkout button
-    Click Button    data-test="checkout"
-    Wait Until Location Is        ${url}checkout-step-one.html timeout=10s
+When user click checkout button
+    Click Button    css=[data-test="checkout"]
+    Wait Until Location Is        ${URL}checkout-step-one.html  timeout=10s
 
-Then user sees the checkout information page
-    Location Should Be    &{url}checkout-step-one.html
+Then user see checkout information page
+    Location Should Be    ${URL}checkout-step-one.html
 
 And user inputs checkout information "${first_name}" "${last_name}" "${zip}"
-    Input Text    data-test="firstName"   ${first_name}
-    Input Text    data-test="lastName"    ${last_name}
-    Input Text    data-test="postalCode"    ${zip}
+    Input Text    css=[data-test="firstName"]   ${first_name}
+    Input Text    css=[data-test="lastName"]    ${last_name}
+    Input Text    css=[data-test="postalCode"]    ${zip}
 
-When user clicks the continue button
-    Click Button    data-test="continue"
-    Wait Until Location Is        ${url}checkout-step-two.html timeout=10s
+When user click continue button
+    Click Button    css=[data-test="continue"]
+    Wait Until Location Is        ${URL}checkout-step-two.html  timeout=10s
 
-Then user sees the checkout overview page
-    Location Should Be    &{url}checkout-step-two.html
+Then user see checkout overview page
+    Location Should Be    ${URL}checkout-step-two.html
 
-And user clicks the finish button
-    Click Button    data-test="finish"
-    Wait Until Location Is        ${url}checkout-complete.html timeout=10s
+And user click finish button
+    Click Button    css=[data-test="finish"]
+    Wait Until Location Is        ${URL}checkout-complete.html  timeout=10s
 
-Then user successfully checks out the product
-    Location Should Be    &{url}checkout-complete.html
+Then user successfully checkout product
+    Location Should Be    ${URL}checkout-complete.html
 
 
 

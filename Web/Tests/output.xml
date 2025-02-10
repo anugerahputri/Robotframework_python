@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-02-06T06:26:42.430397" rpa="false" schemaversion="5">
+<suite id="s1" name="Chekout" source="C:\Users\telkom\PycharmProjects\AnugerahTest\Web\Tests\Chekout.robot">
+<test id="s1-t1" name="Scenario: User successfully checkout product" line="14">
+<kw name="Given user opens browser to &quot;${URL}&quot;" source_name="Given user opens browser to &quot;${URL}&quot;">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:42.677576" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-06T06:26:42.677576" elapsed="2.627636"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.305212" elapsed="0.025216"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=[data-test="username"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.331249" elapsed="0.026438"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:42.676568" elapsed="2.681616"/>
+</kw>
+<kw name="And user successfully login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.360090" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>css=[data-test="username"]</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.359592" elapsed="0.140479"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.501068" level="INFO">Typing text 'secret_sauce' into text field 'css=[data-test="password"]'.</msg>
+<arg>css=[data-test="password"]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.501068" elapsed="0.083493"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.584561" level="INFO">Clicking button 'css=[data-test="login-button"]'.</msg>
+<arg>css=[data-test="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.584561" elapsed="0.107764"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}inventory.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.692325" elapsed="0.012628"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.358701" elapsed="0.347253"/>
+</kw>
+<kw name="And user add to cart product sauce labs backpack">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.707175" level="INFO">Clicking button 'css=[data-test="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>css=[data-test="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.706679" elapsed="0.084486"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.705954" elapsed="0.085211"/>
+</kw>
+<kw name="And user click icon cart">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.791165" level="INFO">Clicking element 'css=[data-test="shopping-cart-badge"]'.</msg>
+<arg>css=[data-test="shopping-cart-badge"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.791165" elapsed="0.060834"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}cart.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.851999" elapsed="0.004359"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.791165" elapsed="0.065498"/>
+</kw>
+<kw name="When user click checkout button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.857470" level="INFO">Clicking button 'css=[data-test="checkout"]'.</msg>
+<arg>css=[data-test="checkout"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.856893" elapsed="0.072916"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}checkout-step-one.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.929809" elapsed="0.005653"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.856893" elapsed="0.078569"/>
+</kw>
+<kw name="Then user see checkout information page">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.939449" level="INFO">Current location is 'https://www.saucedemo.com/checkout-step-one.html'.</msg>
+<arg>${URL}checkout-step-one.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.936458" elapsed="0.002991"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.936458" elapsed="0.002991"/>
+</kw>
+<kw name="And user inputs checkout information &quot;${first_name}&quot; &quot;${last_name}&quot; &quot;${zip}&quot;" source_name="And user inputs checkout information &quot;${first_name}&quot; &quot;${last_name}&quot; &quot;${zip}&quot;">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:45.940446" level="INFO">Typing text 'Anugerah' into text field 'css=[data-test="firstName"]'.</msg>
+<arg>css=[data-test="firstName"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:45.940446" elapsed="0.073242"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.013688" level="INFO">Typing text 'Putri' into text field 'css=[data-test="lastName"]'.</msg>
+<arg>css=[data-test="lastName"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.013688" elapsed="0.060581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.075289" level="INFO">Typing text '234556' into text field 'css=[data-test="postalCode"]'.</msg>
+<arg>css=[data-test="postalCode"]</arg>
+<arg>${zip}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.074269" elapsed="0.061041"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:45.939449" elapsed="0.195861"/>
+</kw>
+<kw name="When user click continue button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.136306" level="INFO">Clicking button 'css=[data-test="continue"]'.</msg>
+<arg>css=[data-test="continue"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.136306" elapsed="0.076817"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}checkout-step-two.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.214057" elapsed="0.005488"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:46.135310" elapsed="0.084235"/>
+</kw>
+<kw name="Then user see checkout overview page">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.223531" level="INFO">Current location is 'https://www.saucedemo.com/checkout-step-two.html'.</msg>
+<arg>${URL}checkout-step-two.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.219545" elapsed="0.003986"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:46.219545" elapsed="0.003986"/>
+</kw>
+<kw name="And user click finish button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.224585" level="INFO">Clicking button 'css=[data-test="finish"]'.</msg>
+<arg>css=[data-test="finish"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.224585" elapsed="0.073306"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}checkout-complete.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.297891" elapsed="0.005091"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:46.224529" elapsed="0.078453"/>
+</kw>
+<kw name="Then user successfully checkout product">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-06T06:26:46.306969" level="INFO">Current location is 'https://www.saucedemo.com/checkout-complete.html'.</msg>
+<arg>${URL}checkout-complete.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-02-06T06:26:46.302982" elapsed="0.003987"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:46.302982" elapsed="0.003987"/>
+</kw>
+<status status="PASS" start="2025-02-06T06:26:42.675623" elapsed="3.631346"/>
+</test>
+<status status="PASS" start="2025-02-06T06:26:42.431393" elapsed="3.876561"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Chekout" id="s1" pass="1" fail="0" skip="0">Chekout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

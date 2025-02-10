@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-02-06T05:50:56.160532" rpa="false" schemaversion="5">
+<suite id="s1" name="AnugerahTest" source="C:\Users\telkom\PycharmProjects\AnugerahTest">
+<suite id="s1-s1" name="Web" source="C:\Users\telkom\PycharmProjects\AnugerahTest\Web">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\telkom\PycharmProjects\AnugerahTest\Web\Tests">
+<suite id="s1-s1-s1-s1" name="Chekout" source="C:\Users\telkom\PycharmProjects\AnugerahTest\Web\Tests\Chekout.robot">
+<test id="s1-s1-s1-s1-t1" name="Given user opens browser to &quot;https://www.saucedemo.com/&quot;" line="11">
+<status status="FAIL" start="2025-02-06T05:50:56.369006" elapsed="0.000000">Test cannot be empty.</status>
+</test>
+<status status="FAIL" start="2025-02-06T05:50:56.184890" elapsed="0.185138"/>
+</suite>
+<status status="FAIL" start="2025-02-06T05:50:56.183892" elapsed="0.187131"/>
+</suite>
+<status status="FAIL" start="2025-02-06T05:50:56.182682" elapsed="0.188341"/>
+</suite>
+<status status="FAIL" start="2025-02-06T05:50:56.161527" elapsed="0.209496"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="AnugerahTest" id="s1" pass="0" fail="1" skip="0">AnugerahTest</stat>
+<stat name="Web" id="s1-s1" pass="0" fail="1" skip="0">AnugerahTest.Web</stat>
+<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">AnugerahTest.Web.Tests</stat>
+<stat name="Chekout" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">AnugerahTest.Web.Tests.Chekout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
